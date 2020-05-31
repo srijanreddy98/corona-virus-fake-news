@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { QueryService } from '../services/query.service';
 
 @Component({
   selector: 'app-query-box',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QueryBoxComponent implements OnInit {
   query = '';
-  constructor() { }
+  constructor(private queryService: QueryService) { }
 
   ngOnInit(): void {
   }
 
   getResults() {
-    console.log(this.query);
+    this.queryService.queryResults(this.query);
   }
 
 }

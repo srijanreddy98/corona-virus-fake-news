@@ -1,1 +1,47 @@
-<p>results-box works!</p>
+<div *ngIf="netErr && !loading">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card accent="error" fxFlex="100%" fxFlex.gt-sm="34%">
+    <nb-card-body>
+      Please check your connection.
+    </nb-card-body>
+  </nb-card>
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+<div *ngIf="!relevantQuery && !loading">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card accent="warning" fxFlex="100%" fxFlex.gt-sm="34%">
+    <nb-card-body>
+      We couldn't find relevant information regarding your claim. However these could interest you.
+    </nb-card-body>
+  </nb-card>
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+<span *ngIf = "!loading">
+<div *ngFor="let news of results">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card accent="info" fxFlex="100%" fxFlex.gt-sm="34%">
+    <nb-card-body>
+      {{news.exp}}
+    </nb-card-body>
+    <nb-card-footer fxLayoutAlign = "end center">
+      <a [href]="news.link"><button nbButton status="success" size="tiny" outline> More Info</button></a>
+    </nb-card-footer>
+  </nb-card>
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+</span>
+<div style="width: 100%; background: white;" *ngIf = "loading" fxLayout="row" fxLayoutAlign="center center">
+  <img width="50%" src="assets/loading.gif">
+</div>
+<div fxLayoutAlign="center center" class="loading" *ngIf = "loading" style="background-color: white; font-size: 130%; height: 10vh;" >{{msg}}</div>
+<br><br><br>
+<!-- <app-anim></app-anim> -->
+<app-img-slider></app-img-slider>
+<!-- <input type="text" [(ngModel)]="playPosition"> -->
+<!-- <div style="width: 600px; height: 600px;">
+  <ngx-flare source="assets/Cat.flr" [playPosition]="playPosition" [playing]="playing" [animation]="animation"  style="height: 100%; width: 100%;"></ngx-flare>
+</div>
+<button (click)="playing = !playing">play</button>
+<button (click)="animation = 'happy-to-sad'">Happy to sad</button>
+<button (click)="animation = 'sad-to-happy'">Sad to happy</button>
+<button (click)="animation = 'happy'">happy</button> -->

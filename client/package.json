@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@2dimensions/flare-js": "^1.0.0",
     "@angular/animations": "~9.1.9",
     "@angular/cdk": "^9.0.0",
     "@angular/common": "~9.1.9",
@@ -24,6 +25,8 @@
     "@nebular/eva-icons": "5.0.0",
     "@nebular/theme": "^5.0.0",
     "eva-icons": "^1.1.2",
+    "gl-matrix": "^3.3.0",
+    "ng-image-slider": "^2.5.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
