@@ -17,6 +17,8 @@ export class ResultsBoxComponent implements OnInit {
   playPosition = 0;
   playing = true;
   animation = 'happy';
+  showing = false;
+  isFalse = 0;
   constructor(private queryService: QueryService) { }
 
   ngOnInit(): void {
@@ -27,14 +29,15 @@ export class ResultsBoxComponent implements OnInit {
     );
     this.queryService.queryingEvent.subscribe(
       res => {
+        this.showing = true;
         this.loading = true;
         this.netErr = false;
         setTimeout(() => {
           this.msg = 'This can take sometime. Please be patient!';
-        }, 15000);
+        }, 10000);
         setTimeout(() => {
           this.msg = 'You can scroll down and look at some myth busters while we are fetching results';
-        }, 30000);
+        }, 25000);
         setTimeout(() => {
           this.msg = 'Results are usually fetched in 60 seconds or less';
         }, 40000);
@@ -42,6 +45,14 @@ export class ResultsBoxComponent implements OnInit {
     );
     this.queryService.queryEvent.subscribe(
       (res: any) => {
+        this.msg = 'Please wait while we scan the web for you!';
+        if ( +res.t_value >= 0.95 ) {
+          this.isFalse = 1;
+        } else if (+res.t_value < 0.95 && +res.t_value >= 0.35) {
+          this.isFalse = 2;
+        } else {
+          this.isFalse = 0;
+        }
         this.results = [];
         this.relevantQuery = true;
         this.loading = false;

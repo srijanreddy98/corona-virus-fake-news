@@ -1,11 +1,32 @@
 <div *ngIf="netErr && !loading">
   <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
-  <nb-card accent="error" fxFlex="100%" fxFlex.gt-sm="34%">
+  <nb-card accent="danger" fxFlex="100%" fxFlex.gt-sm="34%">
     <nb-card-body>
       Please check your connection.
     </nb-card-body>
   </nb-card>
   <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+<div *ngIf="showing && !loading && isFalse === 1">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card fxFlex="100%" fxFlex.gt-sm="34%" status="danger">
+    <nb-card-header>This claim maybe false</nb-card-header>
+    </nb-card>
+    <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+<div *ngIf="showing && !loading && isFalse === 0">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card fxFlex="100%" fxFlex.gt-sm="34%" status="success">
+    <nb-card-header>This claim maybe true</nb-card-header>
+    </nb-card>
+    <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+</div>
+<div *ngIf="showing && !loading && isFalse === 2">
+  <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
+  <nb-card fxFlex="100%" fxFlex.gt-sm="34%" status="warning">
+    <nb-card-header>We are really uncertain about this claim</nb-card-header>
+    </nb-card>
+    <div fxFlex="0%" fxFlex.gt-sm="33%"></div>
 </div>
 <div *ngIf="!relevantQuery && !loading">
   <div fxFlex="0%" fxFlex.gt-sm="33%"></div>

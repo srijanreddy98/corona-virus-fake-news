@@ -22,9 +22,9 @@ export class QueryService {
   }
   constructor(private http: HttpClient) { }
 
-  queryResults(query) {
+  queryResults(query, acc) {
     this._queringEvent.emit();
-    this.http.post('/api/query', {query}).toPromise().then(
+    this.http.post('/api/query', {query, acc}).toPromise().then(
       res => this._queryEvent.emit(res),
       err => this._errEvent.emit()
     );
