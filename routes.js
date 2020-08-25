@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 // http://ab096626-5f0f-4307-a1ce-1f11c4f47766.southeastasia.azurecontainer.io/score
-const urlAcc = 'http://6eb590bb-53d1-4c40-b3b5-16db70a1ce74.southeastasia.azurecontainer.io/score';
-const urlFast = 'http://a4415373-ba28-4f99-b7da-75b95051ea80.southeastasia.azurecontainer.io/score';
+const urlAcc = 'http://531abe45-1cc2-4e37-8d9a-c2d675099237.eastus.azurecontainer.io/score';
+const urlFast = 'http://ffd2842d-6a8a-48f1-8c55-4f000550dabc.southeastasia.azurecontainer.io/score';
 const routes = (app) => {
     app.post('/api/query', (req, res) => {
       if(req.body.acc) {

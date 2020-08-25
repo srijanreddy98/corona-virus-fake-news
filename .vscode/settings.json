@@ -1,7 +1,8 @@
 {
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
-        ".vscode{,/**}"
+        ".vscode{,/**}",
+        "client/node_modules"
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/290467b3-1d1a-4059-8880-d091cc275233/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/covid-19-hackathon",
     "appService.deploySubpath": "."
